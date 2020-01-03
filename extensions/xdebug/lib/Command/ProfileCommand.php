@@ -79,9 +79,9 @@ EOT
                     $generatedFiles[] = $generatedFile = $outputDir . DIRECTORY_SEPARATOR . XDebugUtil::filenameFromIteration($iteration, '.cachegrind');
 
                     if ($guiBin) {
-                        $process = new Process(sprintf(
+                        $process = new Process( [sprintf(
                             $guiBin . ' ' . $generatedFile
-                        ));
+                        )] );
                         $process->run();
                     }
                 },

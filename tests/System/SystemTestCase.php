@@ -74,8 +74,8 @@ class SystemTestCase extends TestCase
         $cwd = $this->workspaceDir . '/' . $cwd;
 
         chdir($cwd);
-        $bin = __DIR__ . '/../../bin/phpbench --verbose';
-        $process = new Process($bin . ' ' . $command);
+        $bin = __DIR__ . '/../../bin/phpbench.php';
+        $process = new Process([$bin . ' ' . $command, '--verbose']);
         $process->run();
 
         return $process;
