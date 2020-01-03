@@ -72,7 +72,7 @@ class Payload
     {
         $this->setPhpPath($phpPath);
         $this->template = $template;
-        $this->process = $process ?: new Process($this->phpPath);
+        $this->process = $process ?: new Process([$this->phpPath]);
         $this->tokens = $tokens;
 
         // disable timeout.
